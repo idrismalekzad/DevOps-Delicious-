@@ -3,6 +3,7 @@ How To Install Prometheus and Grafana In Your Windows or Linux System
 
 Windows :
 1- first of all be sure that you installed docker daemon in your system (in windows you can do it with installing Docker Desktop)
+
 2- after that you shold place the prometheus.yml and Grafana.ini in a specail place in your system 
     -  volumes:
       - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/PrometheusConfigs/prometheus.yml:/etc/prometheus/prometheus.yml                 (Line 53 in docker-compse.yml)
@@ -17,6 +18,7 @@ for example if your location is (D:/User/config) => so the docker compse file wi
       - D:/User/config/prometheus.yml:/etc/prometheus/prometheus.yml
     -  volumes:
       - D:/User/config/grafana.ini:/etc/grafana/grafana.ini  
+      
 
 3- after that now you should run the CMD or PowerShell in the docker-compose file Location and run this command 
   => dokcer-compose up -d
