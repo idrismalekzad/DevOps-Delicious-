@@ -1,7 +1,6 @@
 # DevOps-Delicious
-How To Install Prometheus and Grafana In Your Windows or Linux System 
+How To Install Prometheus and Grafana In Your Windows
 
-Windows :
 1- first of all be sure that you installed docker daemon in your system (in windows you can do it with installing Docker Desktop)
 
 2- after that you shold place the prometheus.yml and Grafana.ini in a specail place in your system 
