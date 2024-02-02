@@ -1,0 +1,92 @@
+#Linux-Version Compose file
+# version: "2"
+
+# services:
+#   prometheus:
+#     image: prom/prometheus
+#     container_name: prometheus-services
+#     hostname: prometheus
+#     restart: always
+#     tty: true
+#     volumes:
+#       - /etc/prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - 9090:9090
+#     networks:
+#       - prometheus
+
+#   node-exporter:
+#     image: quay.io/prometheus/node-exporter:latest
+#     container_name: node-exporter
+#     command:
+#       - '--path.rootfs=/host'
+#     network_mode: host
+#     pid: host
+#     restart: always
+#     volumes:
+#       - '/:/host:ro,rslave'
+#   grafana:
+#     image: grafana/grafana
+#     container_name: grafana
+#     ports:
+#       - '3000:3000'
+#     volumes:
+#       - /etc/grafana.ini:/etc/grafana/grafana.ini
+#     networks:
+#       - prometheus
+
+# networks:
+#   prometheus:
+
+
+# windows Compose File
+version: "2"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus-services
+    hostname: prometheus
+    restart: always
+    tty: true
+    volumes:
+      - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/PrometheusConfigs/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    networks:
+      - prometheus
+
+  # node-exporter:
+  #   image: quay.io/prometheus/node-exporter:latest
+  #   container_name: node-exporter
+  #   command:
+  #     - '--path.rootfs=C:/host'  # Adjust the path for Windows
+  #   network_mode: host
+  #   pid: host
+  #   restart: always
+  #   volumes:
+  #     - 'C:/:/host:ro'  # Adjust the path for Windows
+  node-exporter:
+    image: prom/node-exporter # The Node Exporter image.
+    container_name: node-exporter
+    ports:
+      - 9100:9100 # Expose the Node Exporter port.
+    volumes:
+      - 'C:/:/host:ro' # Mount the host root directory as read-only.
+    networks:
+      - prometheus
+  
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/GrafanaConfigs/grafana.ini:/etc/grafana/grafana.ini
+    networks:
+      - prometheus
+
+networks:
+  prometheus:
+
