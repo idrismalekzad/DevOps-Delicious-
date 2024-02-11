@@ -5,7 +5,7 @@ How To Install Prometheus and Grafana In Your Windows
 
 2- after that you shold place the prometheus.yml and Grafana.ini in a specail place in your system 
     -  volumes:
-      - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/PrometheusConfigs/prometheus.yml:/etc/prometheus/prometheus.yml                 (Line 53 in docker-compse.yml)
+      - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/PrometheusConfigs/prometheus.yml:/etc/prometheus/prometheus.yml          
       
     -  volumes:
       - E:/Sohail/Amoozesh/DEVOPS/Traine-Doc/GrafanaConfigs/grafana.ini:/etc/grafana/grafana.ini  
